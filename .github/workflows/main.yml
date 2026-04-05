@@ -4,22 +4,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - uses: actions/checkout@v2
+      - name: Buildozer Action
+        uses: javiersantos/buildozer-action@master
         with:
-          python-version: '3.9'
+          command: buildozer android debug
 
-      - name: Install Buildozer and Dependencies
-        run: |
-          sudo apt update
-          sudo apt install -y git zip unzip autoconf automake libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev
-          pip install --user --upgrade buildozer Cython==0.29.33
-
-      - name: Build with Buildozer
-        run: |
-          buildozer android debug
 
 
 
