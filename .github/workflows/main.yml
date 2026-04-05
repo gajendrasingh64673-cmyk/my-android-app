@@ -1,4 +1,4 @@
-name: Build APK
+
 on: [push, pull_request]
 jobs:
   build:
@@ -9,3 +9,4 @@ jobs:
         uses: nick-fields/buildozer-action@v1
         with:
           command: buildozer android debug
+
