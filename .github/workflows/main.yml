@@ -6,6 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Buildozer Action
-        uses: ArtemSerebriakov/buildozer-action@v1
+        uses: nick-fields/buildozer-action@v1
         with:
           command: buildozer android debug
