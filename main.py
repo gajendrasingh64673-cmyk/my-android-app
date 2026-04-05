@@ -14,3 +14,14 @@ jobs:
         uses: ArtemSerebriakov/buildozer-action@v1
         with:
           command: buildozer android debug
+name: Build APK
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Buildozer Action
+        uses: ArtemSerebriakov/buildozer-action@v1
+        with:
+          command: buildozer android debug
